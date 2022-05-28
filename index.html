@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Jogo-da-velha</title>
+  </head>
+  <body>
+    <div id="wrapper" class="wrapper">
+      <section class="panel">
+        <label for="pointsX">X
+          <span id="pointsX" class="panel__points">0</span>
+        </label>
+        <label for="pointsO">O
+          <span id="pointsO" class="panel__points">0</span>
+        </label>
+        <label for="player-current">curret:
+          <span id="player-current" class="panel__player-current"></span>
+        </label>
+        <div>
+          <input
+            type="range"
+            name="cor"
+            id="setColor"
+            min="0"
+            max="344"
+            value="110"
+          />
+        </div>
+      </section>
+      <section id="board" class="board">
+        <span id="0"></span>
+        <span id="1"></span>
+        <span id="2"></span>
+        <span id="3"></span>
+        <span id="4"></span>
+        <span id="5"></span>
+        <span id="6"></span>
+        <span id="7"></span>
+        <span id="8"></span>
+        <span id="line" class="line"></span>
+      </section>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
