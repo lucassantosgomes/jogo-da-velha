@@ -145,6 +145,15 @@ const game = {
   }
 }
 
+function colorStorage() {
+  const colorNumberStorage = localStorage.getItem('cor-jogo-da-velha-lsg')
+  if (colorNumberStorage) {
+    color(colorNumberStorage)
+    numberColor.value = colorNumberStorage
+  }
+}
+colorStorage()
+
 board.addEventListener(
   'click',
   e => {
@@ -169,10 +178,11 @@ board.addEventListener(
   false
 )
 
-numberColor.addEventListener('change', color)
+numberColor.addEventListener('change', function(){color(numberColor.value)})
 
-function color() {
-  document.body.style.setProperty('--hue', numberColor.value)
+function color(cor) {
+  document.body.style.setProperty('--hue', cor)
+  localStorage.setItem('cor-jogo-da-velha-lsg', cor)
 }
 
 function haveContent(element) {
@@ -220,7 +230,6 @@ function bntReiniciar(displayOver) {
   bnt.className = 'game-over__bnt'
   bnt.textContent = 'REINICIAR'
   bnt.addEventListener('click', () => {
-    console.log('teste')
     wrapper.removeChild(displayOver)
     clearBoard()
     game.playerRound = 'X'
